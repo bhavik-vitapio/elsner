@@ -1,0 +1,13 @@
+<div class="repairly-details">
+	<div class="repairly-details-header">
+		<h1>More about Repairly</h1>
+	</div>	
+	<div class="row repairly-details-buttons">
+		<div class="col-md-3 col-sm-6 col-xs-12" ng-repeat="panel in $ctrl.panels">
+			<button class="btn" ng-class="panel.style()" ng-click="panel.click()">{{panel.title}}</button>
+		</div>
+	</div>	
+	<div class="row repairly-details-body" ng-show="panel.show()" ng-repeat="panel in $ctrl.panels">
+		<div class="col-xs-12" ng-bind-html="panel.content"></div>
+	</div>	
+</div>

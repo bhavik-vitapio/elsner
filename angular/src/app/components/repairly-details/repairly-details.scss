@@ -1,0 +1,57 @@
+@import "grid";
+@import "variables";
+// @import "mixins/btn";
+@import "mixins/card";
+
+.repairly-details {
+  @include card();
+	@extend .container;
+	padding: 10px 15px 20px;
+  @media (max-width: $break-sm){
+  	border-radius: 0;
+  }
+	.repairly-details-header {
+		padding: 10px 0;
+	  h1 {
+		  font-size: 44px;
+		  font-weight: 900;
+		  text-align: left;
+		  color: #4a4a4a;
+		  @media (max-width: $break-sm){
+		  	font-size: 20px;
+				text-align: center;
+		  }
+	  }
+	}
+	.repairly-details-buttons {
+		text-align: center;
+		padding: 10px 0;
+		button {
+			// @include btn();
+			width: 100%;
+			margin: 4px;
+
+			&.outline {
+				border: solid 1px $dark-pink;
+				background: white;
+				color: $dark-pink;
+			}
+			&.filled {
+				background: $dark-pink;
+				color: white;
+			}
+		}
+	}
+	.repairly-details-body {
+		padding: 10px;
+		* {		
+			font-size: 16px;
+			font-weight: 500;
+			line-height: 1.56;
+		  @media (max-width: $break-sm){
+				font-size: 14px;
+				font-weight: 300;
+		  }
+		}
+	}
+}

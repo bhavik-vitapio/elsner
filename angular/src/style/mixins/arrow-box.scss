@@ -1,0 +1,111 @@
+@mixin arrow-box($left,$background,$border-color) {
+  position: relative;
+  display: inline-block;
+  background: $background;
+  border: 2px solid $border-color;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+  margin-top: 9px;
+  border-radius: 5px;
+  p {
+    margin-bottom: 0px;
+  }
+  &:after, &:before {
+    bottom: 100%;
+    left: $left;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+  }
+  &:after {
+    border-bottom-color: $background;
+    border-width: 5px;
+    margin-left: -5px;
+  }
+  &:before {
+    border-bottom-color: $border-color;
+    border-width: 7px;
+    margin-left: -7px;
+  }
+  
+  /* when hiding the box */
+  &.ng-hide-add         { animation:0.2s flipOutX ease; }
+
+  /* when showing the box */
+  &.ng-hide-remove      { animation:0.5s flipInX ease; }
+
+}
+
+@keyframes flipInX {
+  0% {
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    transition-timing-function: ease-in;
+    opacity: 0;
+  }
+
+  40% {
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    transition-timing-function: ease-in;
+    transition-timing-function: ease-in;
+  }
+
+  60% {
+    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    opacity: 1;
+  }
+
+  80% {
+    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+  }
+
+  100% {
+    transform: perspective(400px);
+    transform: perspective(400px);
+    transform: perspective(400px);
+  }
+}
+
+@keyframes flipOutX {
+  0% {
+    transform: perspective(400px);
+    transform: perspective(400px);
+    transform: perspective(400px);
+  }
+
+  40% {
+    transform: perspective(400px) rotate3d(1, 0, 0, 50deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 50deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 50deg);
+  }
+
+  60% {
+    transform: perspective(400px) rotate3d(1, 0, 0, 70deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 70deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 70deg);
+    opacity: 1;
+  }
+
+  80% {
+    transform: perspective(400px) rotate3d(1, 0, 0, 80deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 80deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 80deg);
+    transition-timing-function: ease-in;
+    transition-timing-function: ease-in;
+  }
+
+  100% {
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    transition-timing-function: ease-in;
+    opacity: 0;
+  }
+}

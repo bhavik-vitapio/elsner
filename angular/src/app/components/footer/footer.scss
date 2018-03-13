@@ -1,0 +1,55 @@
+@import "grid";
+@import "variables";
+
+.repairly-footer {
+	width: 100%;
+	padding: 20px 40px;
+	background-color: #4a4a4a;
+	margin: 0px;
+	@extend .container;
+  * {
+  	color: white;
+  	@media (max-width: $break-sm){
+  		text-align: center;
+  	}
+  }
+  a {
+  	&:hover {
+  		color: white;
+  		cursor: pointer;
+  		text-decoration: none;
+  		text-shadow: 0 0 0.5px white;
+  		img {
+  			transform: scale(1.2);
+  		}
+  	}
+  }
+	ul.page-links {
+		padding: 10px 0;
+    list-style: none;
+		li {
+		  font-size: 14px;
+		  font-weight: 500;
+		  margin: 10px;
+		}
+	}
+	ul.social-links {
+		padding: 20px 0;
+		li {
+			display: inline;
+			margin: 10px;
+		}
+	}
+
+	img.social-icon {
+		max-width: 25px;
+    	max-height: 25px;
+	}
+	
+	.footer-details {
+		text-align: center;
+		p {
+			margin-bottom: 2px;
+		}
+	}
+}

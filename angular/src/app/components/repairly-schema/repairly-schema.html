@@ -1,0 +1,11 @@
+<div itemscope itemtype="http://schema.org/WebPage" class="repairly-schema">
+	<div itemscope itemprop="aggregateRating" itemtype="http://schema.org/AggregateRating">
+	  <span itemprop="ratingValue">{{$ctrl.reviews.raiting_value}}</span>/10 - <span itemprop="reviewCount">{{$ctrl.reviews.review_count}}</span> reviews
+	</div>
+	<div itemscope itemprop="review" itemtype="http://schema.org/Review" ng-repeat="review in $ctrl.reviews.top_reviews | limitTo : 2">
+	  <span itemprop="reviewRating">{{review.score}}</span>/10 -  
+	  <span itemprop="reviewBody">{{review.text}}</span>
+	  by <span itemprop="author">{{review.name}}</span>
+	  on <meta itemprop="datePublished" content="{{review.date}}">{{ review.date | date : 'mediumDate' }}
+	</div>
+</div>

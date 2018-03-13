@@ -1,0 +1,20 @@
+@mixin slanted-background($height,$foreground) {
+  $horizontal-border: 0.5*$height;
+  $vertical-border: 0.4*$horizontal-border;
+  height: $height;
+  object-fit: contain;
+  background: $foreground;
+  &::after {
+    content: '';
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    top: 0;
+    left: -2*$vertical-border;
+    background: transparent;
+    border-top: $horizontal-border solid transparent;
+    border-left: $vertical-border solid transparent;
+    border-right: $vertical-border solid $foreground;
+    border-bottom: $horizontal-border solid $foreground;
+  }
+}

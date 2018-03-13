@@ -1,0 +1,28 @@
+@import "grid";
+@import "buttons";
+
+$btn-color: white;
+
+@mixin clearbtn(){
+	color: $btn-color;
+	outline: none;
+}
+
+@mixin btn(){
+	@extend .btn;
+	margin: auto;
+	border-radius: 6px;
+	background: $dark-pink;
+	color: $btn-color;
+
+  font-size: 20px;
+  font-weight: 900;
+
+  &:hover {
+  	@include clearbtn();
+  	text-shadow: 0 0 1px white;
+  }
+  &:active {
+  	@include clearbtn();
+  }
+}

@@ -1,0 +1,25 @@
+<div class="landing-headlines">
+	<div class="row">
+		<div class="col-md-3 col-sm-6 col-xs-12" ng-repeat="headline in $ctrl.headlines">
+			<div class="landing-headline" ng-click="headline.click()">
+				<p class="landing-headline-title" ng-if="headline.title">{{headline.title}}</p>
+				<div class="landing-headline-images">
+					<img ng-repeat="icon in headline.icons" ng-src="{{icon}}">
+				</div>
+				<p ng-repeat="line in headline.lines">{{line}}</p>
+			</div>
+		</div>
+	</div>	
+	<div class="row video-row" ng-show="$ctrl.showVideo">
+		<div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-10 offset-sm-1 col-xs-12 offset-xs-0">
+			<div class="embed-responsive embed-responsive-16by9">
+			  <youtube-video
+			  	class="embed-responsive-item"
+			  	ng-if="$ctrl.showVideo"
+			  	video-id="'wFgubjUt0RA'"
+			  	player-vars="{ autoplay: 1 }"
+			  ></youtube-video>
+		  </div>
+	  </div>
+	</div>
+</div>

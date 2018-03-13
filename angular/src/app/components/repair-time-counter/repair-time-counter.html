@@ -1,0 +1,28 @@
+<!-- <div class="repair-time-counter">
+  <div class="repair-time-dispaly">
+    <div class="repair-time-digit" ng-repeat="digit in $ctrl.digits track by $index">
+      <div class="repair-time-card" ng-class="digit.class">
+        {{digit.digit}}
+      </div>
+    </div>
+  </div>
+  <div class="repair-time-copy">
+    <strapline></strapline> 
+  </div>
+</div>
+ -->
+
+<div class="row repair-time-counter">
+  <div class="col-lg-5 col-xs-12">
+    <div class="repair-time-dispaly">
+      <div class="repair-time-digit" ng-repeat="digit in $ctrl.digits track by $index">
+        <div class="repair-time-card" ng-class="digit.class">
+          {{digit.digit}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-7 col-xs-12 repair-time-copy">
+    <strapline></strapline> 
+  </div>
+</div>

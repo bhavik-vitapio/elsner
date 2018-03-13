@@ -1,0 +1,215 @@
+@import 'variables';
+// @import 'mixins/btn';
+
+$height: 60px;
+$padding: 10px;
+$duration: 0.2s;
+
+@mixin bar(){
+  height: 100%;
+  padding: $padding;
+}
+
+@keyframes grow-menu {
+  0%    { height: 0 }
+  100%  { height: $height }
+}
+@keyframes shrink-menu {
+  0%    { height: $height }
+  100%  { height: 0 }
+}
+@keyframes slidein-menu {
+  0%    { top: -200px }
+  100%  { top: $height }
+}
+@keyframes slideout-menu {
+  0%    { top: $height }
+  100%  { top: -200px }
+}
+
+.repairly-navbar {
+  nav {
+    text-align: center;
+    overflow: hidden;
+    ul {    
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      min-height: $height - 2*$padding;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      @media (max-width: $break-sm) {
+        flex-direction: column;
+      }
+      li {
+        display: inline-flex;
+        padding-top: 20px;
+        @media (max-width: $break-sm) {
+          padding: 2px;
+        }
+      }
+    }
+    img {
+      padding: 4px;
+    } 
+    &.relative {
+      z-index: 100;
+      margin-bottom: -$height;
+      background-color: transparent;
+      position: relative;
+      height: $height;
+      ul {    
+        li {
+          display: inline-flex;
+          padding: 2px;
+        }
+      }
+      a { 
+        font-size: 16px;
+        font-weight: 500;
+        color: white;
+        &:hover {
+          color: white;
+          cursor: pointer;
+          text-decoration: none;
+          text-shadow: 0 0 0.6px white;
+        }
+      }
+
+    }
+    &.fixed {
+      background-color: white;
+      box-shadow: 0 1px 15px 0 rgba(0, 0, 0, 0.32);
+      position: fixed;
+      z-index: 2000;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: $height;
+
+      &.invert {
+        background-color: $dark-pink;
+      }
+
+      &.ng-hide-add {
+        animation-name: shrink-menu;
+        animation-duration: $duration;
+      }
+      // &.ng-hide-add-active {
+      //   display: none;
+      //   height: 0;
+      // }
+      &.ng-hide-remove {
+        animation-name: grow-menu;
+        animation-duration: $duration;
+      }
+      &.ng-hide-remove-active {
+        height: $height;
+      }
+    }
+    &.submenu {
+      background-color: $dark-pink;
+      box-shadow: 0 1px 15px 0 rgba(0, 0, 0, 0.32);
+      position: fixed;
+      z-index: 1000;
+      top: $height;
+      left: 0;
+      right: 0;
+      min-height: $height;
+      a { 
+        margin: auto;
+        font-size: 16px;
+        font-weight: 900;
+        color: white;
+        &:hover {
+          color: white;
+          cursor: pointer;
+          text-decoration: none;
+          text-shadow: 0 0 0.6px white;
+        }
+      }
+      &.hidden {
+        display: none;
+      }
+      &.ng-hide-add {
+        animation-name: slideout-menu;
+        animation-duration: $duration;
+      }
+      &.ng-hide-add-active {
+        top: 0;
+      }
+      &.ng-hide-remove {
+        animation-name: slidein-menu;
+        animation-duration: $duration;
+      }
+      &.ng-hide-remove-active {
+        top: $height;
+      }
+    }
+    div.repairly-icon {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      i {
+        color: white;
+        background-color: $dark-pink;
+        width: 32px;
+        height: 32px;
+        background-image: url(/images/icons/repairly-white-fill.svg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 16px 16px;
+
+        &.invert{
+          background-image: url(/images/icons/repairly-pink-fill.svg);
+          background-color: white;
+          color: $dark-pink;
+        }
+
+      }
+      span {
+        padding: 4px 10px;
+        font-size: 18px;
+        font-weight: 900;
+        color: $dark-pink;
+
+        &.invert{
+          font-weight: 600;
+          color: white;
+        }
+      }
+    }
+    button.bar-toggle {
+      outline: none;
+      border: none;
+      background: none;
+      margin: 6px 10px;
+      span {
+        margin: 4px 0;
+        width: 20px;
+        display: block;
+        border: solid 1px $dark-pink;
+      }
+    }
+    button.repair-button {
+      // @include btn();
+      background: $dark-pink;
+      border: 0px;
+      color: white;
+      height: 40px;
+      border-radius: 2px;
+      font-size: 16px;
+      font-weight: 900;
+    }
+  }
+  div.spacer {
+    &.relative {
+      height: 0;
+    }
+    &.fixed {
+      height: $height;
+    }
+  }
+}

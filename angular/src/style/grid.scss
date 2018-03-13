@@ -1,0 +1,13 @@
+@import "bootstrap/scss/_functions.scss";
+@import '_variables';
+@import 'mixins/_breakpoints';
+@import 'mixins/_grid';
+
+.container {
+  @include make-container();
+  @include make-container-max-widths();
+}
+
+.container-fluid {
+  @include make-container();
+}

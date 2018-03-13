@@ -1,0 +1,17 @@
+@import "grid";
+@import "variables";
+
+.customer-reviews {
+	@extend .container;
+	@media (max-width: $break-sm){
+		h1 {
+			font-size: 20px;
+			text-align: center;
+		}
+	}
+
+	.tweet-container { 
+		padding-left: 2%;
+		padding-right: 2%;
+	}
+}

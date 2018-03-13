@@ -1,0 +1,83 @@
+@import 'variables';
+
+.repairly-button {
+
+	// Font
+  font-size: 16px;
+  font-weight: 900;
+
+  // Shape
+  border: none;
+  min-width: 100px;
+  margin: 10px auto;
+	padding: 5px 10px;
+  border-radius: 6px;
+
+  // Color
+	color: $dark-pink;
+	background-color: white;
+	border: solid 1px $dark-pink;
+
+  // Remove contained margin
+  * {
+  	margin: 0;
+  }
+
+	&:focus {
+		outline: none !important;
+	}
+
+	&:hover {
+		background-color: $highlight-grey;
+	}
+
+	&.active {
+		color: white;
+		background-color: $dark-pink;
+	}
+
+
+	&.btn-repairly-size-tiny {
+		padding: 0;
+	}
+
+	&.btn-repairly-color-pink {
+		background-color: $dark-pink;
+		color: white;
+	}
+
+	&.btn-repairly-size-small {
+		padding: 10px;
+	}
+
+	&.btn-repairly-size-large {
+	  font-size: 24px;
+	  font-weight: 300;
+		padding: 20px 40px;
+	}
+
+	&.btn-repairly-unavailable {
+		background-color: LightGrey;
+    text-decoration: line-through;
+	}
+
+	&.btn-repairly-width-full {
+		width: 100%;
+	}
+
+	&.btn-repairly-display-inline {
+		display: inline-block;
+	}
+
+	&.btn-repairly-display-block {
+		display: block;
+	}
+
+	&.btn-repairly-position-right {
+		float: right;
+	}
+	@media(max-width: $break-sm) {
+		width: 100% !important;
+		float: none;
+	}
+}

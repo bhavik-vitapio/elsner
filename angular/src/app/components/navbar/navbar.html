@@ -1,0 +1,48 @@
+<div class="repairly-navbar">
+	<nav
+		class="relative"
+		layout="row"
+		layout-align="space-between center"
+		ng-show="$ctrl.state === 'relative'"
+		>
+		<div ng-click="$ctrl.home.click()">
+			<img src="/images/icons/repairly.svg">
+		</div>
+		<div flex="80" ng-hide="$ctrl.hideNavigation">
+			<ul>
+				<li ng-repeat="button in $ctrl.navigation.buttons">
+					<a ng-click="button.click()">{{button.text}}</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<nav
+		class="fixed"
+		layout="row"
+		layout-align="space-between center"
+		ng-show="$ctrl.state === 'fixed'"
+		ng-class="$ctrl.invert ? 'invert'  : ''"
+		>
+		<div>
+		<button type="button" class="bar-toggle" ng-click="$ctrl.toggleMenu()" ng-hide="$ctrl.hideNavigation">
+			<span ng-repeat="i in [0,1,2]"></span>
+	    </button>
+		</div>
+		<div>
+			<div class="repairly-icon" ng-click="$ctrl.home.click()">
+				<i ng-class="$ctrl.invert ? 'invert'  : ''"></i>
+				<span ng-class="$ctrl.invert ? 'invert'  : ''">repairly</span>
+			</div>	
+		</div>
+		<div hide-xs>
+			<button ng-hide="$ctrl.hideRepairButton" class="repair-button" ng-click="$ctrl.repairNow()">Repair Now</button>
+		</div>
+	</nav>
+	<nav class="submenu" ng-class="{ hidden: $ctrl.state !== 'fixed' }" ng-hide="!$ctrl.menu" ng-hide="$ctrl.hideNavigation">
+		<ul layout="row">
+			<li flex ng-repeat="button in $ctrl.navigation.buttons">
+				<a ng-click="button.click()">{{button.text}}</a>
+			</li>
+		</ul>
+	</nav>
+</div>

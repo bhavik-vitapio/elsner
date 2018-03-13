@@ -1,0 +1,17 @@
+<div class="customer-reviews">
+	<div layout="row" layout-wrap>
+		<div
+			flex="{{100/$ctrl.cols}}"
+			flex-sm="100"
+			flex-xs="100"
+			class="tweet-container"
+			ng-repeat="column in $ctrl.grid">
+			<div ng-repeat="tweet in column">
+				<twitter-widget
+					twitter-widget-id="tweet.id"
+					twitter-widget-options="$ctrl.twitterWidgetOptions"
+				></twitter-widget>
+			</div>
+		</div>
+	</div>	
+</div>

@@ -1,0 +1,40 @@
+@import "grid";
+@import 'variables';
+// @import 'mixins/btn';
+
+.business-repairs {
+  @extend .container;
+  text-align: center;
+  padding: 80px 15px;
+  .business-repairs-header {
+    padding: 20px 0;
+    h1 {
+      text-align: center;
+    }
+    @media (max-width: $break-sm){
+      h1 {
+        font-size: 20px;
+      }
+    }
+  }
+  .business-repairs-body {
+    padding: 20px 0;
+    p {
+      text-align: center;
+      font-size: 24px;
+      line-height: 1.71;
+    }
+    @media (max-width: $break-sm){
+      p {
+        font-size: 18px;
+      }
+    }
+  }
+  .business-repairs-buttons {
+    button {
+      // @include btn();
+      font-size: 24px;
+      font-weight: normal;
+    }
+  }
+}

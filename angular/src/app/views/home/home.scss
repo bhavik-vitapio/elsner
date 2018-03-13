@@ -1,0 +1,130 @@
+@import "grid";
+@import "variables";
+
+@mixin fullbleed($z-index: 1){
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: $z-index;
+}
+
+.landing-page {
+	section {
+		margin-top: 0px;
+		$height: 80vh;
+		position: relative;
+		.background-1 {
+			@include fullbleed(1);
+		}
+		.background-2 {
+			@include fullbleed(2);
+		}
+		.background-3 {
+			@include fullbleed(3);
+		}
+		.content {
+			position: relative;
+			z-index: 10;
+		}
+		&#landing-header {
+			min-height: $height;
+			.background-1 {
+				background-color: #4a4a4a;
+			}
+			.background-2 {
+				left: 20%;
+				background: url(images/iphone.jpg);
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: center;
+				opacity: 0.64;
+			}
+			.background-3 {
+				left: -50%;
+				width: 100%;
+				overflow: none;
+				background-color: $dark-pink;
+				transform: skew(-18deg);
+			}
+			.content {
+				@extend .container;
+				padding-top: 100px;
+				overflow: auto;
+			}
+		}
+		&#service-benefits {
+			.background-1 {
+				opacity: 0.3;
+				background-color: $light-pink;
+			}
+		}
+		&#custom-landing {
+			.background-1 {
+				opacity: 0.3;
+				background-color: $light-pink;
+			}
+			.content {
+				padding: 60px;
+				@extend .container;
+			}
+		}
+		&#customer-reviews {
+			.review-heading-container {
+			    text-align: center;
+    			padding-left: 5%;
+			}
+
+			.review-widget-container {
+				padding-left: 8%;
+				padding-right: 8%;
+			}
+
+			.background-1 {			
+				opacity: 0.3;
+				background-color: $light-pink;
+			}
+			.background-3 {			
+				bottom: -200px;
+				background-image: url(images/london.svg);
+				background-repeat: no-repeat;
+				background-size: 40%;
+				background-position: 10% 10%;
+				@media (max-width: $break-sm){
+					background-size: 100%;
+					background-position: top center;
+				}
+			}
+		}
+		&#business-repairs {
+			height: $height;
+			padding-bottom: 100px;
+			.background-1 {			
+				background-image: url(images/android.jpg);
+				background-size: cover;
+				background-position: center 200px;
+			}
+			.background-2 {
+				height: 660px;
+				top: -200px;
+				bottom: none;
+				background-color: white;
+				transform: skew(0,10deg);
+				z-index: 2;
+			}
+		}
+		&#repairly-details {
+			margin-top: -100px;
+			margin-bottom: -50px;
+		}
+		&#footer-bar {
+			.background-1 {			
+				background: #4a4a4a;
+			}
+			.content {
+				padding-top: 100px;
+			}
+		}
+	}
+}

@@ -1,0 +1,9 @@
+.strap-line {
+  transition: opacity 1s;
+  opacity: 1;
+}
+
+.strap-line[class*="-remove"] {
+  transition: none; // No transition on class removal -> instant hiding
+  opacity: 0;
+}

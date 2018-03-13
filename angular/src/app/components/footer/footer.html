@@ -1,0 +1,41 @@
+<div class="repairly-footer container">
+	<div class="row">
+		<div class="col-sm-6 col-sm-offset-3 col-xs-12">
+			<ul class="page-links">
+				<li ng-repeat="button in $ctrl.navigation.buttons">
+					<a ng-click="button.click()">
+						{{button.text}}
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col-sm-5 col-xs-12">
+			<img src="/images/icons/repairly-white-full.svg">
+			<ul class="social-links">
+				<li ng-repeat="social in $ctrl.socials">
+					<a ng-href="{{social.link}}" target="_blank">
+						<img class="social-icon" ng-src="{{social.icon}}">
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<hr>
+		</div>
+	</div>	
+	<div class="row">
+		<div class="col-md-12">
+			<div class="footer-details">
+				<p>Repairly</p>
+				<p>© 2016 SourcedEasily Ltd. All rights reserved.</p>
+				<p>On demand tech repair.</p>
+				<p>Registered in England &amp; Wales, Company No. 09755177.</p>
+				<p>38-40 Commercial Road, London, E1 1LN</p>
+				<p>5 stars - based on 46 reviews</p>
+				<p>iPhone, iPod, iPad, &amp; Mac are all registered trademarks of Apple Inc.</p>
+			</div>
+		</div>
+	</div>	
+</div>

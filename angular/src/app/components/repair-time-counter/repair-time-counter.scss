@@ -1,0 +1,61 @@
+@import "variables";
+
+$border-radius: 5px;
+$card-spacing: 1px;
+
+.repair-time-counter {
+  padding: 0px calc(8%);
+  .repair-time-dispaly {
+    max-width: 99%;
+    float: right;
+    @media(max-width:$break-lg) {
+      float: none;
+    }
+    display: inline-block;
+    .repair-time-digit {
+      display: inline-block;
+      padding: $card-spacing;
+      .repair-time-card {
+        position: relative;
+        padding: 0 2px;
+        background-color: white;
+        color: $dark-pink;
+        font-size: 60px;
+        &.card-left {
+          border-top-left-radius: $border-radius;
+          border-bottom-left-radius: $border-radius;
+        }
+        &.card-right {
+          border-top-right-radius: $border-radius;
+          border-bottom-right-radius: $border-radius;
+        }
+        &.card-blank {
+          color: white;
+          background: none;
+        }
+        &:after {
+          content: '';
+          background-color: $dark-pink;
+          position: absolute;
+          top: 50%;
+          left: 0;
+          right: 0;
+          height: 2*$card-spacing;
+          margin-top: -$card-spacing; 
+        }
+      }
+    }
+  }
+  .repair-time-copy {
+    // max-width: 1%;
+    // white-space: nowrap;
+    // display: inline-block;
+    font-weight: 500;
+    font-size: 22px;
+    color: white;
+    // position: absolute;
+    top: calc(50% - 16px);
+    height: 32px;
+    // margin-left: 10px;
+  }
+}

@@ -1,0 +1,87 @@
+@import "bootstrap/scss/_functions.scss";
+@import "variables";
+@import "mixins/font";
+
+body {
+  @include font('Avenir');
+}
+
+h1 {
+  @include font('Avenir');
+  font-size: 44px;
+  font-weight: 900;
+  text-align: left;
+  @media (max-width: $break-sm){
+    font-size: 30px;
+    text-align: center;
+  }
+}
+
+h2 {
+  @include font('Avenir-Book');
+  font-size: 28px;
+  @media (max-width: $break-sm){
+    font-size: 24px;
+    text-align: center;
+  }
+}
+
+h3 {
+  @include font('Avenir');
+  font-size: 24px;
+  font-weight: 500;
+  @media (max-width: $break-sm){
+    font-size: 20px;
+    text-align: center;
+  }
+}
+
+h4 {
+  @include font('Avenir');
+  font-size: 20px;
+  font-weight: 900;
+  margin-bottom: 20px;
+  @media (max-width: $break-sm){
+    font-size: 18px;
+    text-align: center;
+  }
+}
+h5 {
+  @include font('Avenir-Book');
+  font-size: 16px;
+  margin-bottom: 18px;
+  @media (max-width: $break-sm){
+    font-size: 14px;
+    text-align: center;
+  }
+}
+h6 {
+  @include font('Avenir');
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 16px;
+  @media (max-width: $break-sm){
+    text-align: center;
+    font-size: 12px;
+  }
+}
+
+
+p {  
+  @include font('Avenir-Book');
+  font-size: 16px;
+  @media (max-width: $break-sm){
+    text-align: center;
+    font-size: 12px;
+  }
+}
+
+p.lead {  
+  @include font('Avenir');
+  font-size: 16px;
+  font-weight: 500;
+  @media (max-width: $break-sm){
+    text-align: center;
+    font-size: 16px;
+  }
+}

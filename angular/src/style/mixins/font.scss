@@ -1,0 +1,3 @@
+@mixin font($font: 'Avenir') {
+  font-family: $font, 'Montserrat', sans-serif;
+}
